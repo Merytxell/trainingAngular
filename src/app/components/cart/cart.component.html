@@ -8,6 +8,7 @@
     </ul>
     <p>Total: {{ getTotalPrice() }}</p>
     <button (click)="clearCart()">vider le panier</button>
+    <button (click)="validateCart()">valider</button>
   </div>
   <ng-template #emptyCart>
     <p>votre panier est vide.</p>

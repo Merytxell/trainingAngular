@@ -29,4 +29,9 @@ export class CartComponent implements OnInit {
     this.cartService.clearCart();
     this.cartItems = [];
   }
-}
+
+  validateCart(): void {
+    console.log("bonjour")
+  }
+
+  }
