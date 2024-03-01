@@ -28,12 +28,15 @@ export class CartService {
 
   //retire du panier
   removeTraining (trainings : Training) : void {
-    const index = this.cartItems.findIndex(item => item.id === trainings.id);
-    if (index !== -1) {
-      this.cartItems.splice(index, 1);
-      console.log('Training removed from cart:', trainings);
-    } else {
-      console.log('Training not found in cart:', trainings);
+    const articleInCart = this.cartItems.find(item => item.id === trainings.id);
+    if (articleInCart) {
+      if ( articleInCart.quantity > 1){
+        articleInCart.quantity--;
+
+      }else {
+        const index = this.cartItems.findIndex(item => item.id === trainings.id);
+        this.cartItems.splice(index,1);
+      }
     }
   }
   addQuantity(trainings: Training, newQuantity: number): void {

@@ -18,12 +18,10 @@ export class CustomerComponent implements OnInit {
   }
 
   onSaveCustomer (customer : Customer){
-    onSubmit (f.value:{ name : string, firstname : string, address : string, phone : number, email : string}){
-
-    }
+    this.router.navigateByUrl('order')
     console.log("hello");
     
   }
-  
 }
+
 

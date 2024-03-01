@@ -3,7 +3,6 @@ import { customerService } from '../services/customer.service';
 import { Router } from '@angular/router';
 
 
-
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',
@@ -16,6 +15,8 @@ export class OrderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
+  onSaveCustomer(formValue : {name:string, firstname:string, address:string,phone:number,email:string }){
+    console.log(formValue)
+  }
 
 }

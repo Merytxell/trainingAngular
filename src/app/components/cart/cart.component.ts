@@ -10,17 +10,15 @@ import { Training } from 'src/app/model/Training';
 })
 export class CartComponent implements OnInit {
   cartItems: Training[] = [];
+  total : number | undefined;
 
   constructor(private cartService: CartService, private router : Router) { }
 
   ngOnInit(): void {
     this.cartItems = this.cartService.getCartItems();
+    this.total = this.cartService.getTotalPrice();
   }
 
-
-  getTotalPrice(): number {
-    return this.cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
-  }
 
   removeItemFromCart(item: Training): void {
     this.cartService.removeTraining(item);
