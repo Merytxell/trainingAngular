@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 import { Training } from 'src/app/model/Training';
 
@@ -10,11 +11,12 @@ import { Training } from 'src/app/model/Training';
 export class CartComponent implements OnInit {
   cartItems: Training[] = [];
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService, private router : Router) { }
 
   ngOnInit(): void {
     this.cartItems = this.cartService.getCartItems();
   }
+
 
   getTotalPrice(): number {
     return this.cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
@@ -31,6 +33,7 @@ export class CartComponent implements OnInit {
   }
 
   validateCart(): void {
+    this.router.navigateByUrl('customer')
     console.log("bonjour")
   }
 

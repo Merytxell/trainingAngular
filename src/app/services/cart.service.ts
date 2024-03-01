@@ -36,14 +36,22 @@ export class CartService {
       console.log('Training not found in cart:', trainings);
     }
   }
-
+  addQuantity(trainings: Training, newQuantity: number): void {
+    const existingItem = this.cartItems.find(item => item.id === trainings.id);
+    if (existingItem) {
+      existingItem.quantity = newQuantity;
+      console.log('Quantité ajoutée au panier:', trainings);
+    } else {
+      console.log('formation introuvable:', trainings);
+    }
+  }
   
   getTotalPrice(): number {
     return this.cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
   }
 
   validateCart(): void {
-    console.log()
+    console.log("bonjour")
   }
 
   }

@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CustomerComponent } from './components/customer/customer.component';
+import { OrderComponent } from './order/order.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CustomerComponent } from './components/customer/customer.component';
     TrainingsComponent,
     NotFoundComponent,
     CartComponent,
-    CustomerComponent
+    CustomerComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
