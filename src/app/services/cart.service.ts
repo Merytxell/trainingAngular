@@ -7,11 +7,13 @@ import { Training } from '../model/Training';
 export class CartService {
   //ici on va stocker dans un tableau toutes les formations ajoutées au panier
   cartItems: Training[] = [];
+  
 
   constructor() { }
   // ajoute des formations au panier
   addTraining(trainings : Training) : void{
     this.cartItems.push(trainings);
+    localStorage.setItem('training',JSON.stringify (this.cartItems));
     console.log(trainings)
   }
 
@@ -57,6 +59,8 @@ export class CartService {
     console.log("bonjour")
   }
 
+  //je veux enregistrer ma commande
+ 
   }
 
   
